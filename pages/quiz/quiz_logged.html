@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Find your book</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic' rel='stylesheet' type='text/css' />
+    <script src="../../js/jquery-2.2.4.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <!--<script src="../../js/main.js"></script>-->
+    </head>
+<body class="bg_block">
+    <div class="centered_content_block">
+        <ul class="site_menu">
+            <li><a href="../../index.php">Main</a></li>
+            <li><a href="../about/about.php">About</a></li>
+            <li><a href="../myprofile/myprofile.php">My profile</a></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="right_text_block main_block_content_container">
+            <span class="subtitle">You almost there...</span>
+            <div class="container-fluid bg-info">
+                <div class="modal-dialog" id="quiz-body">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3><div id="question"></div></h3>
+                      </div>
+                      <div class="modal-body" id="answers">
+                          <div class="col-xs-3 col-xs-offset-5">
+                              <div id="loadbar" style="display: none;">
+                                  <div class="blockG" id="rotateG_01"></div>
+                                  <div class="blockG" id="rotateG_02"></div>
+                                  <div class="blockG" id="rotateG_03"></div>
+                                  <div class="blockG" id="rotateG_04"></div>
+                                  <div class="blockG" id="rotateG_05"></div>
+                                  <div class="blockG" id="rotateG_06"></div>
+                                  <div class="blockG" id="rotateG_07"></div>
+                                  <div class="blockG" id="rotateG_08"></div>
+                              </div>
+                          </div>
+                          <div class="quiz" id="quiz" data-toggle="buttons"></div>
+                      </div>
+                    <!--<div class="modal-footer text-muted">
+                        <span id="answer"></span>
+                    </div>-->
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
