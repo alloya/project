@@ -9,6 +9,9 @@ ul, li
     list-style: none;
 }
 
+input {
+    visibility:hidden;
+}
 
 .clear
 {
@@ -89,8 +92,13 @@ ul, li
 {
     margin-top: 75px;
     text-align: center;
-    
     float: right;
+}
+
+.modal-content
+{
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
 }
 
 .subtitle
@@ -107,7 +115,6 @@ ul, li
     line-height: 50px;
     font-family: 'Montserrat', Arial, Verdana;
     text-transform: uppercase;
-    
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -152,6 +159,11 @@ ul, li
 .form
 {
     width: 350px;
+}
+
+.book_img
+{
+    float: left;
 }
 
 #qid {

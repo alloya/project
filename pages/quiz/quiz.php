@@ -4,7 +4,7 @@ header("Content-type: text/html; charset=utf8");
 
 ?>
 <html>
-<script src="../../js/jquery-2.2.4.js"></script>
+    <script src="../../js/jquery-2.2.4.js"></script>
 <script>
 
 function show_question(questionID)
@@ -48,9 +48,11 @@ function show_question(questionID)
                 show_question(nextQ);  
                 show_answers(nextQ);
             }
-          else showBook(nextB);
+          //else showBook(nextB);
+          else window.location.href = "../book/book.php"+"?bookID="+nextB;
         }, 1000);
     }
+    
     function showBook(nextB)
     {
         $.ajax({  
@@ -59,8 +61,8 @@ function show_question(questionID)
                 contentType: 'application/json; charset=utf-8', 
                 url: "getBook.php?bookID="+nextB,  
                 success: function(msg){  
-                console.log(msg);  
-                    redirect
+                    console.log(msg);  
+                    window.location.href = "../book/book.php"+"?bookID="+nextB;
                }  
             });
     }
