@@ -1,5 +1,4 @@
 <?php
-header("Content-type: text/html; charset=utf8");
 //require_once ("../database.php");
 function getQuestionText1($question)
 {

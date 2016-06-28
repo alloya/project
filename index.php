@@ -1,15 +1,8 @@
 <?php
-session_start();
-require_once "database.php";
-echo mysql_error();
+require_once("include/setup.inc.php");
+require_once("libs/Smarty.class.php");
+$smarty = new Smarty();
 
-if (empty($_SESSION['login']) or empty($_SESSION['id']))
-{
-    require_once "pages/main/not_logged.html";
-    exit;
-}
-else
-{
-    require_once "pages/main/logged.html";
-}
-?>
+$isLogged = $_SESSION["is_logged"];
+$smarty->assign("isLogged", $isLogged);
+$smarty->display("index.tpl");

@@ -1,0 +1,9 @@
+<?php
+    require_once("include/setup.inc.php");
+    require_once("libs/Smarty.class.php");
+    $smarty = new Smarty();
+
+    $isLogged = $_SESSION["is_logged"]; 
+
+    $smarty->assign("isLogged", $isLogged);
+    $smarty->display("about.tpl");
