@@ -22,16 +22,8 @@
     
     function authorize($login, $password) 
     {
-        //if (checkPass($login, $password)) 
-        //{
-            $_SESSION["is_logged"] = true;
-            $_SESSION["login"] = $login; /*$_POST["login"]; */
-            $_SESSION["password"] = $password; /*$_POST["password"];*/
-            return true;
-        //}
-        //else 
-        //{
-            //$_SESSION["is_logged"] = false;
-            //return false; 
-        //}
+        $_SESSION["is_logged"] = true;
+        $_SESSION["login"] = $login; 
+        $_SESSION["password"] = $password; 
+        return true;
     }

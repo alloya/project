@@ -4,5 +4,6 @@
     $smarty = new Smarty();
 
     $isLogged = $_SESSION["is_logged"]; 
+    
     $smarty->assign("isLogged", $isLogged);
     $smarty->display("login.tpl");

@@ -36,5 +36,3 @@
         $userID = intval($userID);
         return($userID);
     }
-
-    //checkPass("alloya", "alloya");

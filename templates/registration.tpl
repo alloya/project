@@ -6,7 +6,7 @@
        {include file="header.tpl"}
         <div class="clear"></div>
         <div class="right_text_block main_block_content_container">
-            <form action="include/reg_user.php" method="POST">
+            <form action="include/user_registration.php" method="POST">
                 <fieldset class="form">
                     <legend><span class="subtitle">Registration</span></legend>
                     <div class="form-group">
