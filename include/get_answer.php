@@ -1,5 +1,4 @@
 <?php
-    //header("Content-type: text/html; charset=utf8");
     require_once("setup.inc.php");
     $question = $_GET["questionID"];
     
@@ -10,5 +9,3 @@
     
     $answerArray = getAnswers($question);
     echo (json_encode($answerArray));
-   // print_r ($answerArray);
-   // print_r ("</br>");

@@ -6,6 +6,5 @@
     $isLogged = $_SESSION["is_logged"];
     $question = 
 
-
     $smarty->assign("isLogged", $isLogged);
     $smarty->display("index.tpl");
