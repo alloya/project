@@ -7,5 +7,4 @@
         return dbQueryGetAssoc("SELECT a_text, next_q, next_b FROM answers WHERE curr_q_id='$question'");
     }
     
-    $answerArray = getAnswers($question);
-    echo (json_encode($answerArray));
+    echo json_encode(getAnswers($question));

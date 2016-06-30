@@ -1,11 +1,11 @@
 <?php
     require_once("setup.inc.php");
 
+    $bookID = $_GET["bookID"];
     function getBook($bookID)
     {
         return dbQueryGetAssoc("SELECT * FROM books WHERE b_id='$bookID'");
     }
 
-    $bookID = $_GET["bookID"];
-    $bookData = getBook($bookID);
-    //echo (json_encode($answerArray));
+    //print_r( getBook($bookID));
+    
