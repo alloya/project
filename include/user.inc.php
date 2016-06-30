@@ -16,7 +16,7 @@
         global $g_dbLink;
         $login = dbQuote($login);
         $password = dbQuote($password);
-        //$password = md5($password);
+        $password = md5(md5($password));
         $query = "SELECT login, password FROM user WHERE login = '{$login}' AND password = '{$password}'";
         $result = mysqli_query($g_dbLink, $query);
         if(mysqli_num_rows($result) == 1)
@@ -25,14 +25,4 @@
             return $row;
         }
         return false;
-    }
-    function getUserID($login, $password)
-    {
-        global $g_dbLink;
-        $password = md5($password);
-        $query = "SELECT id FROM user WHERE login = '{$login}' AND password = '{$password}'";
-        $result = dbQueryGetAssoc($query);
-        $userID = $result[0]["id"];
-        $userID = intval($userID);
-        return($userID);
     }

@@ -7,7 +7,7 @@
     if ($result == "loginfail")
     {
         $newPage = 'Ooops...';
-        $message = "Извините, введённыe вами данные неверны.";
+        $message = "Извините, введённые вами данные неверны.";
         $link = 'login.php';
         $nextPage = 'Back';
     }

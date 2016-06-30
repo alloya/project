@@ -4,7 +4,8 @@
     $smarty = new Smarty();
 
     $isLogged = $_SESSION["is_logged"];
-    $question = 
-
+    $pass = md5("12");
+    echo $pass;
+    echo "md5 = c20ad4d76fe97759aa27a0c99bff67";
     $smarty->assign("isLogged", $isLogged);
     $smarty->display("index.tpl");

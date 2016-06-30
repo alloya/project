@@ -5,7 +5,7 @@
     if (!empty($_POST["login"]) && !empty($_POST['password']))
     { 
         $login = trim(dbQuote($_POST['login']));
-        $password = trim(dbQuote($_POST['password']));
+        $password = md5(md5(dbQuote($_POST['password'])));
         $checkLogin = dbQueryGetAssoc("SELECT id FROM user WHERE login = '$login'");
         
         if (!empty($checkLogin[0]['id'])) 
