@@ -7,10 +7,9 @@
         <div class="clear"></div>
         <div class="main_block_content_container">
             <span class="subtitle">{$newPage}</span>
-            <div class="text_about">
+            <div class="form text_about">
                 {$message}
             </div>
-            <div class="separator"></div>
             <a class="start_button" href="{$link}">{$nextPage}</a>
         </div>
     </div>

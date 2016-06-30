@@ -5,7 +5,4 @@
     function getBook($bookID)
     {
         return dbQueryGetAssoc("SELECT * FROM books WHERE b_id='$bookID'");
-    }
-
-    //print_r( getBook($bookID));
-    
+    }    
