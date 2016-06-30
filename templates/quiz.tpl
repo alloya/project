@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 {include file="head.tpl"}
-<body class="bg_block">
-    <div class="centered_content_block">
+<body class="bg-block">
+    <div class="centered-content-block">
         {include file="header.tpl"}
         <div class="clear"></div>
-        <div class="main_block_content_container">
+        <div class="main-block-content-container">
             <span class="subtitle">You almost there...</span>
             <div class="container-fluid bg-info">
                 <div class="modal-dialog" id="quiz-body">

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 {include file="head.tpl"}
-<body class="bg_block">
-    <div class="centered_content_block">
+<body class="bg-block">
+    <div class="centered-content-block">
         {include file="header.tpl"}
         <div class="clear"></div>
             <div class="book-content">

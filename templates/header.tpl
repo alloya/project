@@ -1,4 +1,4 @@
-<ul class="site_menu">
+<ul class="site-menu">
     <li><a href="index.php">Main</a></li>
     <li><a href="about.php">About</a></li>
     {if $isLogged}
