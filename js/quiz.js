@@ -4,12 +4,11 @@ function show_question(questionID)
         type: "GET", 
         dataType: 'json',
         contentType: 'application/json; charset=utf-8', 
-        url: "getQuestion.php?questionID="+questionID,  
+        url: "../include/get_question.php?questionID="+questionID,  
         data: questionID,  
-        success: function(msg)
-        {  
-            //console.log(msg);  
-            $("#question").html(msg);
+        success: function(response)
+        {   
+            $("#question").html(response);
         }  
     });
 }
@@ -30,7 +29,6 @@ $(document).ready(function()
 
 function lableClick(nextQ, nextB)
 {
-    console.log(nextQ);
     $('#loadbar').show();
     $('#quiz').fadeOut();
     setTimeout(function()
@@ -42,9 +40,8 @@ function lableClick(nextQ, nextB)
             show_question(nextQ);  
             show_answers(nextQ);
         }
-        //else showBook(nextB);
-        else window.location.href = "../book/book.php"+"?bookID="+nextB;
-    }, 1000);
+        else window.location.href = "book.php"+"?bookID="+nextB;
+    }, 300);
 }
 
 function showBook(nextB)
@@ -55,10 +52,9 @@ function showBook(nextB)
         dataType: 'json',
         contentType: 'application/json; charset=utf-8', 
         url: "getBook.php?bookID="+nextB,  
-        success: function(msg)
-        {  
-            console.log(msg);  
-            window.location.href = "../book/book.php"+"?bookID="+nextB;
+        success: function(response)
+        {   
+            window.location.href = "book.php"+"?bookID="+nextB;
         }  
     });
 }
@@ -70,22 +66,29 @@ function show_answers(questionID)
         type: "GET",
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
-        url: "getAnswers.php?questionID="+questionID, 
+        url: "../include/get_answer.php?questionID="+questionID, 
         data: questionID,
         cache: false,
-        success: function(msg)
+        success: function(response)
         {
-            console.log(msg);  
-            console.log(JSON.stringify(msg));
-            var answerArray = [];
-            //console.log(response[0]['a_text']);
-            $("#answers").empty();
-            for(var i=0; i<(msg.length); i++)
+            
+            $('#answers').empty();
+            $.each(response, function (key, item) {
+                console.log(item.a_text, item.next_q, item.next_b);
+                var template = $('#item-template').clone().removeAttr('id');
+                $('.answer-text', template).text(item.a_text);
+                $('input[name=q_answer]',template).attr('data-next-q',item.next_q);
+                $('input[name=q_answer]',template).attr('data-next-b',item.next_b);
+                $('#answers').append(template);
+                
+            });
+            $('label.btn').unbind('click').on('click',function () 
             {
-                answerArray =  answerArray + "<label class=\"element-animation3 btn btn-lg btn-primary btn-block\" onclick=\"lableClick("+msg[i]['next_q']+","+msg[i]['next_b']+");\"><span class=\"btn-label\"><i class=\"glyphicon glyphicon-chevron-right\"></i></span> <input type=\"radio\" name=\"q_answer\" data-next-q="+msg[i]['next_q']+">"+msg[i]['a_text']+"</label>";
-                //console.log(answerArray);
-            }
-            $("#answers").append(answerArray);
+                var nextQ = $(this).find('input:radio').attr('data-next-q');
+                console.log(nextQ);
+                var nextB = $(this).find('input:radio').attr('data-next-b');
+                lableClick(nextQ, nextB);
+            });
         }
-        });
+    });
 }
