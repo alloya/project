@@ -14,7 +14,7 @@
     elseif ($result == "loginsuccess") 
     {
         $newPage = "Welcome!";
-        $message = "Вы успешно авторизированны! Теперь вы можете пройти опрос.";
+        $message = "Вы успешно авторизированы! <br/>Теперь вы можете пройти опрос.";
         $link = 'quiz.php';
         $nextPage = 'Let\'s start a quiz!';
     }

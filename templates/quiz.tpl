@@ -5,7 +5,7 @@
         <div class="centered_content_block">
             {include file="header.tpl"}
             <div class="clear"></div>
-            <div class="right_text_block main_block_content_container">
+            <div class="main_block_content_container">
                 <span class="subtitle">You almost there...</span>
                 <div class="container-fluid bg-info">
                     <div class="modal-dialog" id="quiz-body">
